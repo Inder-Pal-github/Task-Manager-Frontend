@@ -66,7 +66,7 @@ const Login = () => {
         </p>
         <div className="oauth">
           <button>
-            <a href="http://localhost:8080/auth/google">Continue with Google</a>
+            <a href="https://clever-mite-overcoat.cyclic.app/auth/google">Continue with Google</a>
           </button>
           <br />
           <button>
