@@ -11,8 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .App {
-  width: calc((100% / 5) * 3);
+  /* width: calc((100% / 6) * 3); */
+  width: 100%;
   margin: auto;
 }
 input:placeholder-shown {
@@ -33,21 +40,27 @@ input[type="submit"] {
   color: white;
   border-radius: 1rem 0 1rem;
 }
-label{
-  font-size: .8rem;
-  font-style:italic;
-  color:rgb(223, 203, 203);
+input[type="submit"]:focus {
+  background-color: rgb(75, 170, 213);
 }
-p{
+input[type="submit"]:hover {
+  background-color: rgb(75, 170, 213);
+}
+label {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgb(223, 203, 203);
+}
+p {
   text-align: center;
 }
-.oauth{
+.oauth {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.oauth>button{
+.oauth > button {
   width: 80%;
   border: none;
   background-color: rgb(144, 159, 144);
@@ -57,7 +70,7 @@ p{
   font-size: 1rem;
   cursor: pointer;
 }
-.oauth>button>a{
+.oauth > button > a {
   color: white;
   text-decoration: none;
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -14,12 +15,14 @@ const Login = () => {
     e.preventDefault();
     console.log(user);
     try {
+      setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:8080/auth/login",
+        "https://clever-mite-overcoat.cyclic.app/auth/login",
         user,
         { credentials: "include" }
       );
-      console.log(data);
+      setLoading(false);
+      navigate("/profile");
       alert(data.message);
       // const tasks = await axios.get("http://localhost:8080/task/all", {
       //   credentials: true,
