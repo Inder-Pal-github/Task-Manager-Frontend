@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
+const url = "http://localhost:8080"
+// const url = "https://clever-mite-overcoat.cyclic.app"
+
 const Profile = () => {
+  console.log("Hello")
   const getTasks = async () => {
     try {
-      let { data } = await axios.get(
-        "https://clever-mite-overcoat.cyclic.app/task/all"
+      console.log("Heelo")
+      axios.defaults.withCredentials = true;
+      let data = await axios.get(
+        `${url}/task/all`
       );
-      alert("Got the tasks");
+      // alert("Got the tasks");
       console.log(data);
     } catch (error) {
       alert(error?.response?.data?.error?.message);

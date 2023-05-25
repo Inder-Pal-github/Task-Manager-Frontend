@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import axios from "axios";
 
+const url = "http://localhost:8080";
+// const url = "https://clever-mite-overcoat.cyclic.app"
+
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -16,13 +19,10 @@ const Login = () => {
     console.log(user);
     try {
       setLoading(true);
-      const { data } = await axios.post(
-        "https://clever-mite-overcoat.cyclic.app/auth/login",
-        user,
-        { credentials: "include" }
-      );
+      axios.defaults.withCredentials = true;
+      const { data } = await axios.post(`${url}/auth/login`, user);
       setLoading(false);
-      navigate("/profile");
+      await navigate("/profile");
       alert(data.message);
       // const tasks = await axios.get("http://localhost:8080/task/all", {
       //   credentials: true,
@@ -66,7 +66,9 @@ const Login = () => {
         </p>
         <div className="oauth">
           <button>
-            <a href="https://clever-mite-overcoat.cyclic.app/auth/google">Continue with Google</a>
+            <a href="https://clever-mite-overcoat.cyclic.app/auth/google">
+              Continue with Google
+            </a>
           </button>
           <br />
           <button>
