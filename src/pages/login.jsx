@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import axios from "axios";
@@ -35,6 +35,11 @@ const Login = () => {
       alert(errorResponse.message);
     }
   };
+  useEffect(() => {
+    axios
+      .get("https://clever-mite-overcoat.cyclic.app/")
+      .then((res) => console.log(res));
+  },[]);
   return (
     <>
       <fieldset>
