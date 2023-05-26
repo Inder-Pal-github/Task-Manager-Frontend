@@ -4,7 +4,7 @@ import "../index.css";
 import axios from "axios";
 
 // const url = "http://localhost:8080";
-const url = "https://clever-mite-overcoat.cyclic.app"
+const url = "https://clever-mite-overcoat.cyclic.app";
 
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -20,7 +20,9 @@ const Login = () => {
     try {
       setLoading(true);
       axios.defaults.withCredentials = true;
-      const { data } = await axios.post(`${url}/auth/login`, user);
+      const { data } = await axios.post(`${url}/auth/login`, user, {
+        headers: { crossDomain: true },
+      });
       setLoading(false);
       await navigate("/profile");
       alert(data.message);
