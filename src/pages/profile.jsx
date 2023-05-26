@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
-const url = "http://localhost:8080"
-// const url = "https://clever-mite-overcoat.cyclic.app"
+// const url = "http://localhost:8080"
+const url = "https://clever-mite-overcoat.cyclic.app"
 
 const Profile = () => {
   console.log("Hello")

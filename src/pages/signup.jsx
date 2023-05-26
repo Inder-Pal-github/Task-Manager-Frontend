@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import axios from "axios";
 
-const url = "http://localhost:8080"
-// const url = "https://clever-mite-overcoat.cyclic.app"
+// const url = "http://localhost:8080"
+const url = "https://clever-mite-overcoat.cyclic.app"
 
 const Signup = () => {
   const [user, setUser] = useState({});
